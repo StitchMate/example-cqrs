@@ -1,0 +1,19 @@
+[package]
+name = "account_command"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+account = { path = "../../contexts/account" }
+actix = "0.13.0"
+anyhow = "1.0.68"
+sqlx = { version = "0.6.2", features = ["runtime-tokio-rustls", "sqlite", "chrono", "postgres"] }
+tokio = { version = "1.24.1", features = ["full"] }
+cqrs-rs = { git = "ssh://github.com/StitchMate/cqrs-rs.git", branch = "main" }
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter", "json"] }
+tracing-opentelemetry = "0.18.0"
+opentelemetry = { version = "0.18.0", features = ["rt-tokio", "trace"] }
+opentelemetry-jaeger = { version = "0.17.0", features = ["collector_client", "isahc_collector_client", "rt-tokio"] }

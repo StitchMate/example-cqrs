@@ -1,0 +1,30 @@
+[package]
+name = "account"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+machines-rs = { git = "ssh://github.com/StitchMate/machines-rs.git", branch = "main" }
+cqrs-rs = { git = "ssh://github.com/StitchMate/cqrs-rs.git", branch = "main" }
+sqlx = { version = "0.6.2", features = ["runtime-tokio-rustls", "sqlite", "chrono", "postgres"] }
+thiserror = "1.0.38"
+anyhow = "1.0.68"
+tokio = { version = "1.24.1", features = ["full"] }
+async-trait = "0.1.61"
+serde = { version = "1.0.152", features = ["derive"] }
+ulid = "1.0.0"
+chrono = { version = "0.4.23", features = ["serde"] }
+serde_json = { version = "1.0.91", features = ["raw_value"] }
+futures = "0.3.25"
+mockall = "0.11.3"
+crossbeam-channel = "0.5.6"
+tokio-stream = "0.1.11"
+validator = { version = "0.16.0", features = ["derive"] }
+argon2 = "0.4.1"
+struct-field-names-as-array = "0.1.4"
+async-graphql = { version = "5.0.5", features = ["chrono"] }
+async-graphql-actix-web = "5.0.5"
+actix-web = { version = "4.2.1", features = ["macros"] }
+tracing = "0.1.37"
